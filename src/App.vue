@@ -1,5 +1,5 @@
 <script lang="ts">
-import Banner from './views/components/Banner.vue';
+import Banner from './views/components/banner/Banner.vue';
 import ConteudoPrincipal from './views/components/ConteudoPrincipal.vue';
 
 export default {
