@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
 import type { Category } from "@/data/models/Category";
-import IngredienteSelecionavel from "./ingrediente-selecionavel/ingrediente-selecionavel.vue";
+import SelectableIngredient from "./selectable-ingredient/selectable-ingredient.vue";
 
 const props = defineProps<{
   categoria: Category;
@@ -25,7 +25,7 @@ const props = defineProps<{
         v-for="ingrediente in props.categoria.ingredientes"
         :key="ingrediente"
       >
-        <IngredienteSelecionavel
+        <SelectableIngredient
           :ingrediente="ingrediente"
           @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
         />
