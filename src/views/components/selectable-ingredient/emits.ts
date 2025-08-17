@@ -1,3 +1,3 @@
-export type IngredienteSelecionavelEmits = {
+export type SelectableIngredientEmits = {
   adicionarIngrediente: [ingrediente: string];
 };

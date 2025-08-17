@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Tag from "../Tag.vue";
-import type { IngredienteSelecionavelEmits } from "./emits";
+import type { SelectableIngredientEmits } from "./emits";
 
 const props = defineProps<{
   ingrediente: string;
@@ -9,7 +9,7 @@ const props = defineProps<{
 
 const isSelected = ref(false);
 
-var emit = defineEmits<IngredienteSelecionavelEmits>();
+var emit = defineEmits<SelectableIngredientEmits>();
 
 function handleSelection() {
   isSelected.value = !isSelected.value;

@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import type { Category } from "@/data/models/Category";
 import CardCategoria from "@/views/components/category-card/CardCategoria.vue";
-import type { IngredienteSelecionavelEmits } from "./selectable-ingredient/emits";
+import type { SelectableIngredientEmits } from "./selectable-ingredient/emits";
 import { CategoryService } from "@/server/services/category-service";
 
 const categorias = ref<Category[]>([]);
@@ -11,7 +11,7 @@ onMounted(async () => {
   categorias.value = await CategoryService.getAllCategories();
 });
 
-const emit = defineEmits<IngredienteSelecionavelEmits>();
+const emit = defineEmits<SelectableIngredientEmits>();
 </script>
 
 <template>
