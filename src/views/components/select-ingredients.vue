@@ -27,6 +27,7 @@ const emit = defineEmits<SelectableIngredientEmits>();
         <CardCategoria
           :categoria="categoria"
           @add-ingredient="$emit('addIngredient', $event)"
+          @remove-ingredient="$emit('removeIngredient', $event)"
         />
       </li>
     </ul>

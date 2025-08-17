@@ -27,6 +27,7 @@ const props = defineProps<{
         <SelectableIngredient
           :ingredient="ingrediente"
           @add-ingredient="$emit('addIngredient', $event)"
+          @remove-ingredient="$emit('removeIngredient', $event)"
         />
       </li>
     </ul>
