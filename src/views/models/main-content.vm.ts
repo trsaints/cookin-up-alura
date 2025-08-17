@@ -8,7 +8,7 @@ export class MainContentViewModel implements IMainContentViewModel {
     this.ingredients = ingredients;
   }
 
-  addIngredient(newIngredient: string, ingredients: string[]): boolean {
+  addIngredient(newIngredient: string): boolean {
     if (this.ingredients.value.includes(newIngredient)) return false;
 
     this.ingredients.value.push(newIngredient);

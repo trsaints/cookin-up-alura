@@ -1,3 +1,3 @@
 export interface IMainContentViewModel {
-  addIngredient(newIngredient: string, ingredients: string[]): boolean;
+  addIngredient(newIngredient: string): boolean;
 }
