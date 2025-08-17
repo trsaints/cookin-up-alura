@@ -5,10 +5,10 @@ import CardCategoria from "@/views/components/category-card/CardCategoria.vue";
 import type { SelectableIngredientEmits } from "./selectable-ingredient/emits";
 import { CategoryService } from "@/server/services/category-service";
 
-const categorias = ref<Category[]>([]);
+const categories = ref<Category[]>([]);
 
 onMounted(async () => {
-  categorias.value = await CategoryService.getAllCategories();
+  categories.value = await CategoryService.getAllCategories();
 });
 
 const emit = defineEmits<SelectableIngredientEmits>();
@@ -23,7 +23,7 @@ const emit = defineEmits<SelectableIngredientEmits>();
     </p>
 
     <ul class="categorias">
-      <li v-for="categoria in categorias" :key="categoria.nome">
+      <li v-for="categoria in categories" :key="categoria.nome">
         <CardCategoria
           :categoria="categoria"
           @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
