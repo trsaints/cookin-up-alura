@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
 import type { Category } from "@/data/models/Category";
-import CardCategoria from "../category-card/CardCategoria.vue";
+import CardCategoria from "@/views/components/category-card/CardCategoria.vue";
 import type { IngredienteSelecionavelEmits } from "./selectable-ingredient/emits";
 import { CategoryService } from "@/server/services/category-service";
 
