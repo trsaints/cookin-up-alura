@@ -11,7 +11,7 @@ const isSelected = ref(false);
 
 var emit = defineEmits<SelectableIngredientEmits>();
 
-const vm = new SelectableIngredientViewModel(emit);
+const vm = new SelectableIngredientViewModel(emit, isSelected);
 </script>
 
 <template>
