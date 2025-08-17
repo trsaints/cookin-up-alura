@@ -17,4 +17,14 @@ export class MainContentViewModel implements IMainContentViewModel {
 
     return false;
   }
+
+  removeIngredient(ingredient: string): boolean {
+    const index = this.ingredients.value.indexOf(ingredient);
+
+    if (index === -1) return false;
+
+    this.ingredients.value.splice(index, 1);
+
+    return true;
+  }
 }

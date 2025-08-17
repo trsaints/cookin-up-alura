@@ -15,6 +15,7 @@ const vm = new MainContentViewModel(ingredients);
 
     <SelectIngredients
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
+      @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
     />
   </main>
 </template>
