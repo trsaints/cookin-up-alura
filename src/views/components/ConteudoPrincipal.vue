@@ -2,19 +2,22 @@
 import { ref } from "vue";
 import SelectIngredients from "./select-ingredients.vue";
 import SuaLista from "./SuaLista.vue";
+import { MainContentViewModel } from "../models/main-content.vm";
 
-const ingredientes = ref<string[]>([]);
+const ingredients = ref<string[]>([]);
 
-function adicionarIngrediente(novoIngrediente: string) {
-  ingredientes.value.push(novoIngrediente);
-}
+const vm = new MainContentViewModel();
 </script>
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista :ingredientes="ingredientes" />
+    <SuaLista :ingredientes="ingredients" />
 
-    <SelectIngredients @add-ingredient="adicionarIngrediente" />
+    <SelectIngredients
+      @add-ingredient="
+        (ingredient) => vm.addIngredient(ingredient, ingredients)
+      "
+    />
   </main>
 </template>
 
