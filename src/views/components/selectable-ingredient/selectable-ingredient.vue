@@ -15,7 +15,7 @@ const vm = new SelectableIngredientViewModel(emit, isSelected);
 </script>
 
 <template>
-  <button @click="() => vm.handleSelection(isSelected, props.ingredient)">
+  <button @click="() => vm.handleSelection(props.ingredient)">
     <Tag :texto="props.ingredient" :ativa="isSelected" />
   </button>
 </template>
