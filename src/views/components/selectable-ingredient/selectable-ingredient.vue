@@ -3,10 +3,9 @@ import { ref } from "vue";
 import Tag from "../Tag.vue";
 import type { SelectableIngredientEmits } from "../../emits/selectable-ingredient-emits";
 import { SelectableIngredientViewModel } from "@/views/models/selectable-ingredient.vm";
+import type { SelectableIngredientProps } from "@/views/props/selectable-ingredient-props";
 
-const props = defineProps<{
-  ingredient: string;
-}>();
+const props = defineProps<SelectableIngredientProps>();
 
 const isSelected = ref(false);
 
