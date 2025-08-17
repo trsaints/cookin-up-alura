@@ -22,7 +22,7 @@
   </header>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import logoImg from "@/assets/imagens/logo.svg";
 import bannerImg from "@/assets/imagens/foto-banner.png";
 </script>
