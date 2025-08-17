@@ -26,7 +26,7 @@ const emit = defineEmits<SelectableIngredientEmits>();
       <li v-for="categoria in categories" :key="categoria.nome">
         <CardCategoria
           :categoria="categoria"
-          @adicionar-ingrediente="$emit('adicionarIngrediente', $event)"
+          @add-ingredient="$emit('addIngredient', $event)"
         />
       </li>
     </ul>

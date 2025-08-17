@@ -4,7 +4,7 @@ import Tag from "../Tag.vue";
 import type { SelectableIngredientEmits } from "../../emits/emits";
 
 const props = defineProps<{
-  ingrediente: string;
+  ingredient: string;
 }>();
 
 const isSelected = ref(false);
@@ -16,12 +16,12 @@ function handleSelection() {
 
   if (!isSelected.value) return;
 
-  emit("adicionarIngrediente", props.ingrediente);
+  emit("addIngredient", props.ingredient);
 }
 </script>
 
 <template>
   <button @click="handleSelection">
-    <Tag :texto="props.ingrediente" :ativa="isSelected" />
+    <Tag :texto="props.ingredient" :ativa="isSelected" />
   </button>
 </template>
