@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import SelecionarIngredientes from "./SelecionarIngredientes.vue";
+import SelectIngredients from "./select-ingredients.vue";
 import SuaLista from "./SuaLista.vue";
 
 const ingredientes = ref<string[]>([]);
@@ -14,7 +14,7 @@ function adicionarIngrediente(novoIngrediente: string) {
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
 
-    <SelecionarIngredientes @adicionar-ingrediente="adicionarIngrediente" />
+    <SelectIngredients @adicionar-ingrediente="adicionarIngrediente" />
   </main>
 </template>
 
