@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { defineProps } from "vue";
 import type { Category } from "@/data/models/Category";
 import SelectableIngredient from "./selectable-ingredient/selectable-ingredient.vue";
 
