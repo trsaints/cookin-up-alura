@@ -6,7 +6,7 @@ import { MainContentViewModel } from "../models/main-content.vm";
 
 const ingredients = ref<string[]>([]);
 
-const vm = new MainContentViewModel();
+const vm = new MainContentViewModel(ingredients);
 </script>
 
 <template>
