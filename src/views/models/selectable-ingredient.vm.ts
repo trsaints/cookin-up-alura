@@ -16,7 +16,11 @@ export class SelectableIngredientViewModel
   handleSelection(ingredient: string): void {
     this.isSelected.value = !this.isSelected.value;
 
-    if (!this.isSelected) return;
+    if (!this.isSelected) {
+      this.emit("removeIngredient", ingredient);
+
+      return;
+    }
 
     this.emit("addIngredient", ingredient);
   }
