@@ -1,3 +1,3 @@
 export interface ISelectableIngredientViewModel {
-  handleSelection(isSelected: boolean, ingredient: string): void;
+  handleSelection(ingredient: string): void;
 }
