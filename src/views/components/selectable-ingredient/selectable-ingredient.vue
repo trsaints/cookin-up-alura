@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Tag from "../Tag.vue";
-import type { SelectableIngredientEmits } from "./emits";
+import type { SelectableIngredientEmits } from "../../emits/emits";
 
 const props = defineProps<{
   ingrediente: string;
