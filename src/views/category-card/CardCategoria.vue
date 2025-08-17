@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { Category } from "@/data/models/Category";
-import SelectableIngredient from "./selectable-ingredient/selectable-ingredient.vue";
+import SelectableIngredient from "@/views/components/selectable-ingredient/selectable-ingredient.vue";
 
 const props = defineProps<{
   categoria: Category;
