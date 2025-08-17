@@ -14,7 +14,7 @@ function adicionarIngrediente(novoIngrediente: string) {
   <main class="conteudo-principal">
     <SuaLista :ingredientes="ingredientes" />
 
-    <SelectIngredients @adicionar-ingrediente="adicionarIngrediente" />
+    <SelectIngredients @add-ingredient="adicionarIngrediente" />
   </main>
 </template>
 
