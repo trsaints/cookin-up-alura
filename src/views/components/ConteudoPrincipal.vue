@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import SelectIngredients from "./select-ingredients.vue";
 import YourList from "@/views/components/your-list/your-list.vue";
 import { MainContentViewModel } from "@/views/models/main-content.vm";
@@ -10,6 +10,12 @@ const ingredients = ref<string[]>([]);
 const selectedPage = ref<SelectedPage>("SelecionarIngredientes");
 
 const vm = new MainContentViewModel(ingredients, selectedPage);
+
+const isIngredientsPage = computed(
+  () => selectedPage.value === "SelecionarIngredientes"
+);
+
+const isRecipesPage = computed(() => selectedPage.value === "MostrarReceitas");
 </script>
 
 <template>
@@ -17,13 +23,13 @@ const vm = new MainContentViewModel(ingredients, selectedPage);
     <YourList :ingredients="ingredients" />
 
     <SelectIngredients
-      v-if="selectedPage === 'SelecionarIngredientes'"
+      v-if="isIngredientsPage"
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
       @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
       @find-recipes="vm.renderRecipeSelection()"
     />
 
-    <RecipesSelection v-if="selectedPage === 'MostrarReceitas'" />
+    <RecipesSelection v-if="isRecipesPage" />
   </main>
 </template>
 
