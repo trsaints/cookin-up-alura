@@ -3,8 +3,11 @@ import { ref } from "vue";
 import SelectIngredients from "./select-ingredients.vue";
 import YourList from "@/views/components/your-list/your-list.vue";
 import { MainContentViewModel } from "@/views/models/main-content.vm";
+import type { SelectedPage } from "@/data/types/SelectedPage";
+import RecipesSelection from "./recipes-selection/recipes-selection.vue";
 
 const ingredients = ref<string[]>([]);
+const selectedPage = ref<SelectedPage>("SelecionarIngredientes");
 
 const vm = new MainContentViewModel(ingredients);
 </script>
@@ -14,9 +17,12 @@ const vm = new MainContentViewModel(ingredients);
     <YourList :ingredients="ingredients" />
 
     <SelectIngredients
+      v-if="selectedPage === 'SelecionarIngredientes'"
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
       @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
     />
+
+    <RecipesSelection v-if="selectedPage === 'MostrarReceitas'" />
   </main>
 </template>
 
