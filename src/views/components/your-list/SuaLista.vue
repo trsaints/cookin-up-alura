@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Tag from "./Tag.vue";
+import Tag from "@/views/components/Tag.vue";
 import type { YourListProps } from "@/views/props/your-list-props";
 
 const props = defineProps<YourListProps>();

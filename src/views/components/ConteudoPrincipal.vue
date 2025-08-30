@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import SelectIngredients from "./select-ingredients.vue";
-import SuaLista from "./SuaLista.vue";
-import { MainContentViewModel } from "../models/main-content.vm";
+import SuaLista from "@/views/components/your-list/SuaLista.vue";
+import { MainContentViewModel } from "@/views/models/main-content.vm";
 
 const ingredients = ref<string[]>([]);
 
