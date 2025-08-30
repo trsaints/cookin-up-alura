@@ -12,6 +12,8 @@ export class MainContentViewModel implements IMainContentViewModel {
   }
 
   renderRecipeSelection(): void {
+    if (this.ingredients.value.length === 0) return;
+
     this.selectedPage.value = "MostrarReceitas";
   }
 
