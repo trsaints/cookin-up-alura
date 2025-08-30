@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import SelectIngredients from "./select-ingredients.vue";
-import SuaLista from "@/views/components/your-list/SuaLista.vue";
+import YourList from "@/views/components/your-list/your-list.vue";
 import { MainContentViewModel } from "@/views/models/main-content.vm";
 
 const ingredients = ref<string[]>([]);
@@ -11,7 +11,7 @@ const vm = new MainContentViewModel(ingredients);
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista :ingredients="ingredients" />
+    <YourList :ingredients="ingredients" />
 
     <SelectIngredients
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
