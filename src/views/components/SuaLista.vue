@@ -1,29 +1,25 @@
-<script lang="ts">
-import type { PropType } from 'vue';
-import Tag from './Tag.vue';
+<script setup lang="ts">
+import Tag from "./Tag.vue";
+import type { YourListProps } from "@/views/props/your-list-props";
 
-export default {
-  components: { Tag },
-  props: {
-    ingredientes: { type: Array as PropType<string[]>, required: true }
-  },
-}
+const props = defineProps<YourListProps>();
 </script>
 
 <template>
   <section>
-    <span class="subtitulo-lg sua-lista-texto">
-      Sua lista:
-    </span>
+    <span class="subtitulo-lg sua-lista-texto"> Sua lista: </span>
 
-    <ul v-if="ingredientes.length" class="ingredientes-sua-lista">
-      <li v-for="ingrediente in ingredientes" :key="ingrediente">
-        <Tag :texto="ingrediente" ativa />
+    <ul v-if="props.ingredients.length > 0" class="ingredientes-sua-lista">
+      <li v-for="i in props.ingredients" :key="i">
+        <Tag :texto="i" ativa />
       </li>
     </ul>
 
     <p v-else class="paragrafo lista-vazia">
-      <img src="../assets/imagens/icones/lista-vazia.svg" alt="Ícone de pesquisa">
+      <img
+        src="@/assets/imagens/icones/lista-vazia.svg"
+        alt="Ícone de pesquisa"
+      />
       Sua lista está vazia, selecione ingredientes para iniciar.
     </p>
   </section>
@@ -31,7 +27,7 @@ export default {
 
 <style scoped>
 .sua-lista-texto {
-  color: var(--coral, #F0633C);
+  color: var(--coral, #f0633c);
   display: block;
   text-align: center;
   margin-bottom: 1.5rem;
@@ -51,7 +47,7 @@ export default {
   flex-wrap: wrap;
   gap: 0.25rem;
 
-  color: var(--coral, #F0633C);
+  color: var(--coral, #f0633c);
   text-align: center;
 }
 </style>

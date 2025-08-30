@@ -11,7 +11,7 @@ const vm = new MainContentViewModel(ingredients);
 
 <template>
   <main class="conteudo-principal">
-    <SuaLista :ingredientes="ingredients" />
+    <SuaLista :ingredients="ingredients" />
 
     <SelectIngredients
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
