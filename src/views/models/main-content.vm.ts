@@ -32,8 +32,12 @@ export class MainContentViewModel implements IMainContentViewModel {
     return true;
   }
 
-  renderRecipeSelection(): void {
+  async renderRecipeSelection(): Promise<void> {
     if (this.ingredients.value.length === 0) return;
+
+    const hasLoaded = await this.loadRecipes();
+
+    if (!hasLoaded) return;
 
     this.selectedPage.value = "MostrarReceitas";
   }
