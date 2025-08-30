@@ -1,14 +1,35 @@
 import type { Ref } from "vue";
 import type { IMainContentViewModel } from "./interfaces/imain-content.vm";
 import type { SelectedPage } from "@/data/types/SelectedPage";
+import type { IRecipeService } from "@/server/services/interfaces/irecipe-service";
+import type { Recipe } from "@/data/models/Recipe";
 
 export class MainContentViewModel implements IMainContentViewModel {
   private ingredients: Ref<string[]>;
+  private recipes: Ref<Recipe[]>;
   private selectedPage: Ref<SelectedPage>;
+  private recipeService: IRecipeService;
 
-  constructor(ingredients: Ref<string[]>, selectedPage: Ref<SelectedPage>) {
+  constructor(
+    ingredients: Ref<string[]>,
+    recipes: Ref<Recipe[]>,
+    selectedPage: Ref<SelectedPage>,
+    recipeService: IRecipeService
+  ) {
     this.ingredients = ingredients;
+    this.recipes = recipes;
     this.selectedPage = selectedPage;
+    this.recipeService = recipeService;
+  }
+
+  async loadRecipes(): Promise<boolean> {
+    const recipes = await this.recipeService.getAllRecipes();
+
+    if (recipes.length === 0) return false;
+
+    this.recipes.value = recipes;
+
+    return true;
   }
 
   renderRecipeSelection(): void {
