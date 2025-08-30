@@ -1,11 +1,18 @@
 import type { Ref } from "vue";
 import type { IMainContentViewModel } from "./interfaces/imain-content.vm";
+import type { SelectedPage } from "@/data/types/SelectedPage";
 
 export class MainContentViewModel implements IMainContentViewModel {
   private ingredients: Ref<string[]>;
+  private selectedPage: Ref<SelectedPage>;
 
-  constructor(ingredients: Ref<string[]>) {
+  constructor(ingredients: Ref<string[]>, selectedPage: Ref<SelectedPage>) {
     this.ingredients = ingredients;
+    this.selectedPage = selectedPage;
+  }
+
+  renderRecipeSelection(): void {
+    this.selectedPage.value = "MostrarReceitas";
   }
 
   addIngredient(newIngredient: string): boolean {

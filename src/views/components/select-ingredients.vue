@@ -36,7 +36,9 @@ const emit = defineEmits<SelectableIngredientEmits>();
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
 
-    <button class="search" type="button">Buscar receitas!</button>
+    <button class="search" type="button" @click="$emit('findRecipes')">
+      Buscar receitas!
+    </button>
   </article>
 </template>
 

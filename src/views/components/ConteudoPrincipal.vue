@@ -9,7 +9,7 @@ import RecipesSelection from "./recipes-selection/recipes-selection.vue";
 const ingredients = ref<string[]>([]);
 const selectedPage = ref<SelectedPage>("SelecionarIngredientes");
 
-const vm = new MainContentViewModel(ingredients);
+const vm = new MainContentViewModel(ingredients, selectedPage);
 </script>
 
 <template>
@@ -20,6 +20,7 @@ const vm = new MainContentViewModel(ingredients);
       v-if="selectedPage === 'SelecionarIngredientes'"
       @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
       @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
+      @find-recipes="vm.renderRecipeSelection()"
     />
 
     <RecipesSelection v-if="selectedPage === 'MostrarReceitas'" />
