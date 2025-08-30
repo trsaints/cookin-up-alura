@@ -15,7 +15,7 @@ const emit = defineEmits<SelectableIngredientEmits>();
 </script>
 
 <template>
-  <section class="selecionar-ingredientes">
+  <article class="selecionar-ingredientes">
     <h1 class="cabecalho titulo-ingredientes">Ingredientes</h1>
 
     <p class="paragrafo-lg instrucoes">
@@ -35,7 +35,9 @@ const emit = defineEmits<SelectableIngredientEmits>();
     <p class="paragrafo dica">
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
-  </section>
+
+    <button class="search" type="button">Buscar receitas!</button>
+  </article>
 </template>
 
 <style scoped>
@@ -66,6 +68,14 @@ const emit = defineEmits<SelectableIngredientEmits>();
 .dica {
   align-self: flex-start;
   margin-bottom: 3.5rem;
+}
+
+.search {
+  border-radius: 64px;
+  padding: 16px 64px;
+  background-color: var(--coral);
+  color: var(--branco);
+  font-weight: 600;
 }
 
 @media only screen and (max-width: 767px) {

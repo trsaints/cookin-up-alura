@@ -29,6 +29,7 @@ button {
   border: 0;
   background-color: inherit;
   font: inherit;
+  cursor: pointer;
 }
 
 body {
