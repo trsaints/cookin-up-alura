@@ -23,7 +23,7 @@ export class MainContentViewModel implements IMainContentViewModel {
   }
 
   async loadRecipes(): Promise<boolean> {
-    const recipes = await this.recipeService.getAllRecipes();
+    const recipes = await this.recipeService.getAll();
 
     if (recipes.length === 0) return false;
 
