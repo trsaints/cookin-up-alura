@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import type { SelectableIngredientEmits } from "../../emits/selectable-ingredient-emits";
+import type { SelectableIngredientEmits } from "../../emits/selectable-ingredient.emits";
 import { SelectableIngredientViewModel } from "@/views/models/selectable-ingredient.vm";
 import type { SelectableIngredientProps } from "@/views/props/selectable-ingredient-props";
 import IngredientTag from "../ingredient-tag/ingredient-tag.vue";

@@ -2,7 +2,7 @@
 import { ref, onMounted } from "vue";
 import type { Category } from "@/data/models/Category";
 import CardCategoria from "@/views/components/category-card/CardCategoria.vue";
-import type { SelectableIngredientEmits } from "@/views/emits/selectable-ingredient-emits";
+import type { SelectableIngredientEmits } from "@/views/emits/selectable-ingredient.emits";
 import { CategoryService } from "@/server/services/category-service";
 
 const categories = ref<Category[]>([]);

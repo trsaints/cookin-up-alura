@@ -1,6 +1,8 @@
-import type { SelectableIngredientEmits } from "@/views/emits/selectable-ingredient-emits";
+import type { SelectableIngredientEmits } from "@/views/emits/selectable-ingredient.emits";
 
-export type SelectableIngredientEmitFn = <K extends keyof SelectableIngredientEmits>(
+export type SelectableIngredientEmitFn = <
+  K extends keyof SelectableIngredientEmits
+>(
   event: K,
   ...args: SelectableIngredientEmits[K]
 ) => void;
