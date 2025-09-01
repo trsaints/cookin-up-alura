@@ -42,7 +42,11 @@ const matchingRecipes = computed(() =>
       @find-recipes="vm.renderRecipeSelection()"
     />
 
-    <RecipesSelection v-if="isRecipesPage" :recipes="matchingRecipes" />
+    <RecipesSelection
+      v-if="isRecipesPage"
+      :recipes="matchingRecipes"
+      @edit-ingredients="vm.renderIngredientsSelection()"
+    />
   </main>
 </template>
 

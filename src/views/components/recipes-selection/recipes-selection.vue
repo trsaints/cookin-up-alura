@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import type { RecipesSelectionProps } from "@/views/props/recipes-selection-props";
 import RecipeCard from "../recipe-card/recipe-card.vue";
+import type { RecipesSelectionEmits } from "@/views/emits/main-content.emits";
 
 const props = defineProps<RecipesSelectionProps>();
+const emits = defineEmits<RecipesSelectionEmits>();
 </script>
 
 <template>
@@ -27,6 +29,8 @@ const props = defineProps<RecipesSelectionProps>();
 
       <img src="/imagens/no_recipes.svg" alt="" />
     </aside>
+
+    <button @click="$emit('editIngredients')">Editar Lista</button>
   </article>
 </template>
 
