@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed, ref } from "vue";
-import SelectIngredients from "@/views/components/select-ingredients.vue";
+import SelectIngredients from "@/views/components/select-ingredients/select-ingredients.vue";
 import YourList from "@/views/components/your-list/your-list.vue";
 import { MainContentViewModel } from "@/views/models/main-content.vm";
 import type { SelectedPage } from "@/data/types/SelectedPage";
