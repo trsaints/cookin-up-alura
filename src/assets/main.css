@@ -1,13 +1,13 @@
 :root {
-  --ocre: #D1451E;
-  --coral: #F0633C;
-  --coral-claro: #FFDBD1;
-  --creme: #FFFAF3;
-  --verde-escuro: #263A29;
-  --verde-medio: #3D6D4A;
+  --ocre: #d1451e;
+  --coral: #f0633c;
+  --coral-claro: #ffdbd1;
+  --creme: #fffaf3;
+  --verde-escuro: #263a29;
+  --verde-medio: #3d6d4a;
   --cinza: #444444;
-  --cinza-claro: #EFEFEF;
-  --branco: #FFF;
+  --cinza-claro: #efefef;
+  --branco: #fff;
 
   --font-family-padrao: Nunito Sans, sans-serif;
   --cabecalhos: Paytone One, sans-serif;
@@ -21,7 +21,16 @@
   padding: 0;
 }
 
-ul, li {
+h2 {
+  margin-bottom: 32px;
+  font-size: 2.25rem;
+  font-weight: 500;
+  font-family: var(--cabecalhos);
+  color: var(--verde-medio);
+}
+
+ul,
+li {
   list-style: none;
 }
 
@@ -39,7 +48,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  background: url('./imagens/fundo-banner.png'), var(--verde-escuro, #263A29);
+  background: url("./imagens/fundo-banner.png"), var(--verde-escuro, #263a29);
 }
 
 .cabecalho-lg {
