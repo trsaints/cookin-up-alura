@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Tag from "@/views/components/Tag.vue";
 import type { YourListProps } from "@/views/props/your-list-props";
+import IngredientTag from "../ingredient-tag.vue";
 
 const props = defineProps<YourListProps>();
 </script>
@@ -11,7 +11,7 @@ const props = defineProps<YourListProps>();
 
     <ul v-if="props.ingredients.length > 0" class="ingredientes-sua-lista">
       <li v-for="i in props.ingredients" :key="i">
-        <Tag :texto="i" ativa />
+        <IngredientTag :texto="i" ativa />
       </li>
     </ul>
 

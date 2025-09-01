@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Tag from "../Tag.vue";
 import type { SelectableIngredientEmits } from "../../emits/selectable-ingredient-emits";
 import { SelectableIngredientViewModel } from "@/views/models/selectable-ingredient.vm";
 import type { SelectableIngredientProps } from "@/views/props/selectable-ingredient-props";
+import IngredientTag from "../ingredient-tag.vue";
 
 const props = defineProps<SelectableIngredientProps>();
 
@@ -16,6 +16,6 @@ const vm = new SelectableIngredientViewModel(emit, isSelected);
 
 <template>
   <button @click="() => vm.handleSelection(props.ingredient)">
-    <Tag :texto="props.ingredient" :ativa="isSelected" />
+    <IngredientTag :texto="props.ingredient" :ativa="isSelected" />
   </button>
 </template>
