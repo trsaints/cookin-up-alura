@@ -22,6 +22,10 @@ export class MainContentViewModel implements IMainContentViewModel {
     this.recipeService = recipeService;
   }
 
+  renderIngredientsSelection(): void {
+    this.selectedPage.value = "SelecionarIngredientes";
+  }
+
   async loadRecipes(): Promise<boolean> {
     const recipes = await this.recipeService.getAll();
 
