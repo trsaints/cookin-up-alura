@@ -8,14 +8,14 @@ import RecipesSelection from "./recipes-selection/recipes-selection.vue";
 import { RecipeService } from "@/server/services/recipe-serivce";
 import type { Recipe } from "@/data/models/Recipe";
 
-const ingredients = ref<string[]>([]);
-const recipes = ref<Recipe[]>([]);
+const allIngredients = ref<string[]>([]);
+const allRecipes = ref<Recipe[]>([]);
 const selectedPage = ref<SelectedPage>("SelecionarIngredientes");
 const recipesService = new RecipeService();
 
 const vm = new MainContentViewModel(
-  ingredients,
-  recipes,
+  allIngredients,
+  allRecipes,
   selectedPage,
   recipesService
 );
@@ -25,11 +25,15 @@ const isIngredientsPage = computed(
 );
 
 const isRecipesPage = computed(() => selectedPage.value === "MostrarReceitas");
+
+const matchingRecipes = computed(() =>
+  recipesService.byIngredients(allRecipes.value, allIngredients.value)
+);
 </script>
 
 <template>
   <main class="conteudo-principal">
-    <YourList :ingredients="ingredients" />
+    <YourList :ingredients="allIngredients" />
 
     <SelectIngredients
       v-if="isIngredientsPage"
@@ -38,7 +42,7 @@ const isRecipesPage = computed(() => selectedPage.value === "MostrarReceitas");
       @find-recipes="vm.renderRecipeSelection()"
     />
 
-    <RecipesSelection v-if="isRecipesPage" :recipes="recipes" />
+    <RecipesSelection v-if="isRecipesPage" :recipes="matchingRecipes" />
   </main>
 </template>
 

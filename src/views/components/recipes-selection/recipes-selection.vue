@@ -6,11 +6,13 @@ const props = defineProps<RecipesSelectionProps>();
 </script>
 
 <template>
-  <ul class="recipes">
+  <ul class="recipes" v-if="recipes.length">
     <li v-for="recipe in props.recipes" :key="recipe.nome">
       <RecipeCard :recipe="recipe" />
     </li>
   </ul>
+
+  <p v-else>Ops! Não encontramos nenhuma receita com esses ingredientes.</p>
 </template>
 
 <style scoped>
