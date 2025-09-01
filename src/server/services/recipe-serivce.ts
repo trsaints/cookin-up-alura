@@ -4,7 +4,7 @@ import type { IRecipeService } from "./interfaces/irecipe-service";
 export class RecipeService implements IRecipeService {
   byIngredients(recipes: Recipe[], ingredients: string[]): Recipe[] {
     return recipes.filter((r) =>
-      r.ingredientes.every((i) => ingredients.includes(i))
+      ingredients.every((i) => r.ingredientes.includes(i))
     );
   }
 
