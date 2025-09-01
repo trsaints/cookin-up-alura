@@ -30,5 +30,7 @@ const props = defineProps<RecipeCardProps>();
   font-weight: bold;
   text-align: center;
   padding-block: 32px;
+  font-family: var(--font-family-padrao);
+  color: var(--cinza);
 }
 </style>

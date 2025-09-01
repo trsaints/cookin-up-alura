@@ -56,6 +56,7 @@ const emits = defineEmits<RecipesSelectionEmits>();
   display: flex;
   gap: 32px;
   flex-wrap: wrap;
+  margin-bottom: 56px;
 }
 
 .no-content {
