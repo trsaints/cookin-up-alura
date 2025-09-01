@@ -35,12 +35,14 @@ const matchingRecipes = computed(() =>
   <main class="conteudo-principal">
     <YourList :ingredients="allIngredients" />
 
-    <SelectIngredients
-      v-if="isIngredientsPage"
-      @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
-      @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
-      @find-recipes="vm.renderRecipeSelection()"
-    />
+    <KeepAlive>
+      <SelectIngredients
+        v-if="isIngredientsPage"
+        @add-ingredient="(ingredient) => vm.addIngredient(ingredient)"
+        @remove-ingredient="(ingredient) => vm.removeIngredient(ingredient)"
+        @find-recipes="vm.renderRecipeSelection()"
+      />
+    </KeepAlive>
 
     <RecipesSelection
       v-if="isRecipesPage"
