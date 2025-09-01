@@ -8,7 +8,7 @@ const emits = defineEmits<RecipesSelectionEmits>();
 </script>
 
 <template>
-  <article>
+  <article class="recipes-selection">
     <header class="selection-header">
       <h2>Receitas</h2>
 
@@ -30,11 +30,18 @@ const emits = defineEmits<RecipesSelectionEmits>();
       <img src="/imagens/no_recipes.svg" alt="" />
     </aside>
 
-    <button @click="$emit('editIngredients')">Editar Lista</button>
+    <button class="btn-highlight" @click="$emit('editIngredients')">
+      Editar Lista
+    </button>
   </article>
 </template>
 
 <style scoped>
+:where(.recipes-selection .btn-highlight) {
+  display: block;
+  margin-inline: auto;
+}
+
 .selection-header {
   text-align: center;
   margin-bottom: 32px;
@@ -53,6 +60,7 @@ const emits = defineEmits<RecipesSelectionEmits>();
 
 .no-content {
   text-align: center;
+  margin-bottom: 32px;
 }
 
 :where(.no-content p) {

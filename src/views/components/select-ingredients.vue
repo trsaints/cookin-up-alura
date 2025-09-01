@@ -36,7 +36,7 @@ const emit = defineEmits<SelectableIngredientEmits>();
       *Atenção: consideramos que você tem em casa sal, pimenta e água.
     </p>
 
-    <button class="search" type="button" @click="$emit('findRecipes')">
+    <button class="btn-highlight" type="button" @click="$emit('findRecipes')">
       Buscar receitas!
     </button>
   </article>
@@ -70,14 +70,6 @@ const emit = defineEmits<SelectableIngredientEmits>();
 .dica {
   align-self: flex-start;
   margin-bottom: 3.5rem;
-}
-
-.search {
-  border-radius: 64px;
-  padding: 16px 64px;
-  background-color: var(--coral);
-  color: var(--branco);
-  font-weight: 600;
 }
 
 @media only screen and (max-width: 767px) {

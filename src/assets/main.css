@@ -95,3 +95,11 @@ body {
 img {
   max-width: 100%;
 }
+
+.btn-highlight {
+  border-radius: 64px;
+  padding: 16px 64px;
+  background-color: var(--coral);
+  color: var(--branco);
+  font-weight: 600;
+}
