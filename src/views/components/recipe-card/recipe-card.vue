@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RecipeCardProps } from "@/views/props/recipe-card-props";
+import type { RecipeCardProps } from "@/views/props/recipe-card.props";
 
 const props = defineProps<RecipeCardProps>();
 </script>

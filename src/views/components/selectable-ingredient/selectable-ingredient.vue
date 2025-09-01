@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import type { SelectableIngredientEmits } from "../../emits/selectable-ingredient.emits";
 import { SelectableIngredientViewModel } from "@/views/models/selectable-ingredient.vm";
-import type { SelectableIngredientProps } from "@/views/props/selectable-ingredient-props";
+import type { SelectableIngredientProps } from "@/views/props/selectable-ingredient.props";
 import IngredientTag from "../ingredient-tag/ingredient-tag.vue";
 
 const props = defineProps<SelectableIngredientProps>();

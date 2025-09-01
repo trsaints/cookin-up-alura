@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { RecipesSelectionProps } from "@/views/props/recipes-selection-props";
+import type { RecipesSelectionProps } from "@/views/props/recipes-selection.props";
 import RecipeCard from "../recipe-card/recipe-card.vue";
 import type { RecipesSelectionEmits } from "@/views/emits/main-content.emits";
 
